@@ -9,13 +9,14 @@ function ValidarUsuario(user, pass, iniciar_sesion){
 
         const login = {NombreUsuario: user.value, Password: pass.value}
 
-        fetch("https://vinculos-backend-fth6etbkfhfwbqhn.centralus-01.azurewebsites.net", {
+        fetch("https://vinculos-backend-fth6etbkfhfwbqhn.centralus-01.azurewebsites.net/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(login)
         })
+
         .then(response => response.json())
         .then(data => {
             if (data.existe){
