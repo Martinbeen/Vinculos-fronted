@@ -3,8 +3,8 @@ const pass = document.getElementById("password");
 const iniciar_sesion = document.getElementById("iniciar_sesion");
 
 function ValidarUsuario(user, pass, iniciar_sesion){
-    iniciar_sesion.addEventListener("click", () => {
-        //event.preventDefault(); // evitar que el form recargue la página
+    iniciar_sesion.addEventListener("click", (event) => {
+        event.preventDefault(); // evitar que el form recargue la página
         if (user.value.length === 0 || pass.value.length === 0) return;
 
         const login = {NombreUsuario: user.value, Password: pass.value}
