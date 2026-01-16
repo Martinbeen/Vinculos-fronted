@@ -10,7 +10,7 @@ function ValidarUsuario(user, pass, iniciar_sesion){
         const login = {NombreUsuario: user.value, Password: pass.value}
 
         fetch("https://vinculos-backend-fth6etbkfhfwbqhn.centralus-01.azurewebsites.net", {
-            method: "Post",
+            method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
