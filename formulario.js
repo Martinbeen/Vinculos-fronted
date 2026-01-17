@@ -20,12 +20,11 @@ function ValidarUsuario(user, pass, iniciar_sesion){
         .then(response => response.json())
         .then(data => {
             if (data.existe){
-                alert(response.json());
                 alert("Entrada Correcta");
                 //window.location.href = "";
             }
             else{
-                alert("Creadenciales invalidas: " + data.mensaje);
+                alert("Credenciales invalidas: " + data.mensaje);
             }
         })
         .catch(error => {
