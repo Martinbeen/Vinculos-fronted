@@ -21,7 +21,7 @@ function ValidarUsuario(user, pass, iniciar_sesion){
         .then(data => {
             if (data.existe){
                 alert("Entrada Correcta");
-                //window.location.href = "";
+                //window.location.href = ""
             }
             else{
                 alert("Credenciales invalidas: " + data.mensaje);
