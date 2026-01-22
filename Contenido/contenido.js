@@ -9,11 +9,6 @@ fetch("https://vinculos-backend-fth6etbkfhfwbqhn.centralus-01.azurewebsites.net/
     return response.json();
   })
   .then(data => {
-    console.log("Datos recibidos:", data);
-    if (data.length === 0) {
-        alert("No se devolvieron personas desde el backend");
-    }
-
     data.forEach(persona => {
       // Crear un bloque de <p> por cada persona
       const nombre = document.createElement("p");
@@ -32,7 +27,6 @@ fetch("https://vinculos-backend-fth6etbkfhfwbqhn.centralus-01.azurewebsites.net/
       genero.textContent = persona.Genero;
       tabla.appendChild(genero);
     });
-    alert("se agrego");
   })
   .catch(error => {
     console.error("Error:", error);
