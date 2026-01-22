@@ -20,6 +20,7 @@ function ValidarUsuario(user, pass, iniciar_sesion){
         .then(response => response.json())
         .then(data => {
             if (data.existe){
+                //lola
                 window.location.href = "Contenido/contenido.html";
             }
             else{
