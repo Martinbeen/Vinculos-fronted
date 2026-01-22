@@ -8,7 +8,14 @@ fetch("https://vinculos-backend-fth6etbkfhfwbqhn.centralus-01.azurewebsites.net/
     return response.json();
   })
   .then(data => {
-    
+    // limpiar todo menos los títulos
+    tabla.innerHTML = `
+      <p class="titulo">Nombre</p>
+      <p class="titulo">Fecha De Nacimiento</p>
+      <p class="titulo">DNI</p>
+      <p class="titulo">Genero</p>
+    `;
+    //trola
     data.forEach(persona => {
       tabla.innerHTML += `
         <p>${persona.nombre}</p>
