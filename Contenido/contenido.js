@@ -28,7 +28,7 @@ fetch("https://vinculos-backend-fth6etbkfhfwbqhn.centralus-01.azurewebsites.net/
       genero.textContent = persona.Genero;
       tabla.appendChild(genero);
     });
-
+    alert("se agrego");
   })
   .catch(error => {
     console.error("Error:", error);
