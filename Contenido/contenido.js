@@ -18,19 +18,19 @@ fetch("https://vinculos-backend-fth6etbkfhfwbqhn.centralus-01.azurewebsites.net/
 
     data.forEach(persona => {
       const nombre = document.createElement("p");
-      nombre.textContent = "Nombre: " + persona.nombre;
+      nombre.textContent = "Nombre: " + persona.Nombre;
       tabla.appendChild(nombre);
 
       const fecha = document.createElement("p");
-      fecha.textContent = "Fecha de Nacimiento: " + persona.fechaNacimiento;
+      fecha.textContent = "Fecha de Nacimiento: " + persona.FechaNacimiento;
       tabla.appendChild(fecha);
 
       const dni = document.createElement("p");
-      dni.textContent = "DNI: " + persona.dni;
+      dni.textContent = "DNI: " + persona.DNI;
       tabla.appendChild(dni);
 
       const genero = document.createElement("p");
-      genero.textContent = "Género: " + persona.genero;
+      genero.textContent = "Género: " + persona.Genero;
       tabla.appendChild(genero);
     });
 
