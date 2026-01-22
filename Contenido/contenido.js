@@ -15,7 +15,7 @@ fetch("https://vinculos-backend-fth6etbkfhfwbqhn.centralus-01.azurewebsites.net/
       <p class="titulo">DNI</p>
       <p class="titulo">Genero</p>
     `;*/
-
+    //trola
     data.forEach(persona => {
       tabla.innerHTML += `
         <p>${persona.nombre}</p>
