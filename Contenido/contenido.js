@@ -9,29 +9,27 @@ fetch("https://vinculos-backend-fth6etbkfhfwbqhn.centralus-01.azurewebsites.net/
   })
   .then(data => {
     console.log("Datos recibidos:", data);
-    console.log("Total personas: " + data.length);
 
     if (data.length === 0) {
       alert("No se devolvieron personas desde el backend");
       return;
     }
 
+    // limpiar todo menos los títulos
+    tabla.innerHTML = `
+      <p class="titulo">Nombre</p>
+      <p class="titulo">Fecha De Nacimiento</p>
+      <p class="titulo">DNI</p>
+      <p class="titulo">Genero</p>
+    `;
+
     data.forEach(persona => {
-      const nombre = document.createElement("p");
-      nombre.textContent = "Nombre: " + persona.Nombre;
-      tabla.appendChild(nombre);
-
-      const fecha = document.createElement("p");
-      fecha.textContent = "Fecha de Nacimiento: " + persona.FechaNacimiento;
-      tabla.appendChild(fecha);
-
-      const dni = document.createElement("p");
-      dni.textContent = "DNI: " + persona.DNI;
-      tabla.appendChild(dni);
-
-      const genero = document.createElement("p");
-      genero.textContent = "Género: " + persona.Genero;
-      tabla.appendChild(genero);
+      tabla.innerHTML += `
+        <p>${persona.nombre}</p>
+        <p>${persona.fechaNacimiento}</p>
+        <p>${persona.dni}</p>
+        <p>${persona.genero}</p>
+      `;
     });
 
     alert("Se agregaron las personas");
