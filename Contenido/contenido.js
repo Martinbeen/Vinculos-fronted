@@ -9,7 +9,7 @@ fetch("https://vinculos-backend-fth6etbkfhfwbqhn.centralus-01.azurewebsites.net/
     return response.json();
   })
   .then(data => {
-    console.log("Datos recibidos:", data);
+    alert("Datos recibidos:", data);
     if (data.length === 0) {
         alert("No se devolvieron personas desde el backend");
     }
