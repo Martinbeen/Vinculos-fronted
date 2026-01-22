@@ -8,20 +8,13 @@ fetch("https://vinculos-backend-fth6etbkfhfwbqhn.centralus-01.azurewebsites.net/
     return response.json();
   })
   .then(data => {
-    console.log("Datos recibidos:", data);
-
-    if (data.length === 0) {
-      alert("No se devolvieron personas desde el backend");
-      return;
-    }
-
     // limpiar todo menos los títulos
-    tabla.innerHTML = `
+    /*tabla.innerHTML = `
       <p class="titulo">Nombre</p>
       <p class="titulo">Fecha De Nacimiento</p>
       <p class="titulo">DNI</p>
       <p class="titulo">Genero</p>
-    `;
+    `;*/
 
     data.forEach(persona => {
       tabla.innerHTML += `
@@ -31,8 +24,6 @@ fetch("https://vinculos-backend-fth6etbkfhfwbqhn.centralus-01.azurewebsites.net/
         <p>${persona.genero}</p>
       `;
     });
-
-    alert("Se agregaron las personas");
   })
   .catch(error => {
     console.error("Error:", error);
