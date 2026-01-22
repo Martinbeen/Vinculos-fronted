@@ -1,6 +1,5 @@
 const tabla = document.getElementById("tabla");
 
-
 fetch("https://vinculos-backend-fth6etbkfhfwbqhn.centralus-01.azurewebsites.net/api/Personas/listar")
   .then(response => {
     if (!response.ok) {
@@ -10,33 +9,34 @@ fetch("https://vinculos-backend-fth6etbkfhfwbqhn.centralus-01.azurewebsites.net/
   })
   .then(data => {
     console.log("Datos recibidos:", data);
-    alert("Datos recibidos: " + JSON.stringify(data));
-    Console.WriteLine("Total personas: " + personas.Count);
+    console.log("Total personas: " + data.length);
+
     if (data.length === 0) {
-        alert("No se devolvieron personas desde el backend");
+      alert("No se devolvieron personas desde el backend");
+      return;
     }
 
     data.forEach(persona => {
-      // Crear un bloque de <p> por cada persona
       const nombre = document.createElement("p");
-      nombre.textContent = persona.Nombre;
+      nombre.textContent = "Nombre: " + persona.nombre;
       tabla.appendChild(nombre);
 
       const fecha = document.createElement("p");
-      fecha.textContent = persona.FechaNacimiento;
+      fecha.textContent = "Fecha de Nacimiento: " + persona.fechaNacimiento;
       tabla.appendChild(fecha);
 
       const dni = document.createElement("p");
-      dni.textContent = persona.DNI;
+      dni.textContent = "DNI: " + persona.dni;
       tabla.appendChild(dni);
 
       const genero = document.createElement("p");
-      genero.textContent = persona.Genero;
+      genero.textContent = "Género: " + persona.genero;
       tabla.appendChild(genero);
     });
-    alert("se agrego");
+
+    alert("Se agregaron las personas");
   })
   .catch(error => {
     console.error("Error:", error);
-    alert("Error de conexión con el servidor");
+    alert("Error de conexión con el servidor: " + error.message);
   });
