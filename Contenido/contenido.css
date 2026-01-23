@@ -45,7 +45,7 @@ header h1 {
 }
 
 #contenido {
-  max-width: 100%;
+  max-width: 80rem;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -109,20 +109,4 @@ header h1 {
 }
 #tabla p:nth-child(1), #tabla p:nth-child(2), #tabla p:nth-child(3) {
   border-right: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-/* responsivo en celulares */
-p {
-  overflow-wrap: break-word;
-}
-
-@media only screen and (max-width: 768px) {
-  #tabla {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media only screen and (max-width: 480px) {
-  #tabla {
-    grid-template-columns: 1fr;
-  }
 }/*# sourceMappingURL=contenido.css.map */

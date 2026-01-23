@@ -77,7 +77,7 @@ header{
 }
 
 #contenido{
-  max-width: 100%;//80rem;
+  max-width: 80rem;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -108,21 +108,4 @@ header{
 /* stilos para la Tabla */
 #tabla{
   @include tablaEstilo4Columnas;
-}
-
-
-
-/* responsivo en celulares */
-p {
-  overflow-wrap: break-word;
-}
-@media only screen and (max-width: 768px) {
-  #tabla {
-    grid-template-columns: 1fr 1fr; // 2 columnas en tablets
-  }
-}
-@media only screen and (max-width: 480px) {
-  #tabla {
-    grid-template-columns: 1fr; // 1 columna en móviles
-  }
 }
