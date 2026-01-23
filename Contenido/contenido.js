@@ -68,5 +68,38 @@ function identificacionesSinRegistro(boton, elemento){
     });
   });
 }
-
 identificacionesSinRegistro(identificaciones_sin_registro, sin_registro);
+
+// mostrar contactos sin registro
+const contacto_sin_registro = document.getElementById("contacto_sin_registro");
+
+function contactoSinRegistro(boton, elemento){
+  boton.addEventListener("click", (event) => {
+    fetch("https://vinculos-backend-fth6etbkfhfwbqhn.centralus-01.azurewebsites.net/api/GestionDeContacto/listar")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Error en la respuesta del servidor");
+      }
+      return response.json();
+      })
+    .then(data => {
+      // limpiar todo menos los títulos
+      elemento.innerHTML = `
+        <p class="titulo">ID</p>
+        <p class="titulo">Nombres</p>
+      `;
+      // mostrar las identificaciones en filas
+      data.forEach(persona => {
+        elemento.innerHTML += `
+          <p>${persona.id}</p>
+          <p>${persona.nombres}</p>
+        `;
+      });
+    })
+    .catch(error => {
+      console.error("Error:", error);
+      alert("Error de conexión con el servidor: " + error.message);
+    });
+  });
+}
+contactoSinRegistro(contacto_sin_registro, sin_registro);
