@@ -92,7 +92,7 @@ function contactoSinRegistro(boton, elemento){
       data.forEach(persona => {
         elemento.innerHTML += `
           <p>${persona.id}</p>
-          <p>${persona.nombres}</p>
+          <p>${persona.nombre}</p>
         `;
       });
     })
