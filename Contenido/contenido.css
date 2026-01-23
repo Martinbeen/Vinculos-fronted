@@ -55,13 +55,16 @@ header h1 {
   border-right: 1px solid rgba(0, 0, 0, 0.2);
 }
 #contenido section:first-child button {
-  padding: 0.5rem;
+  padding: 1rem;
   background-color: #185ec7;
   font-size: 1.2rem;
   color: rgb(227, 222, 222);
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 1rem;
 }
-#contenido section:first-child button :hover {
-  background-color: #185ec7;
+#contenido section:first-child button:hover {
+  background-color: #436fb2;
 }
 
 /* stilos para la Tabla */

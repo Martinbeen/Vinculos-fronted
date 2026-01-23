@@ -66,13 +66,15 @@ header{
     }
     #sin_registro{ @include tablaEstilo4Columnas;}
     button{
-      padding: 0.5rem;
+      padding: 1rem;
       background-color: $color-boton;
       font-size: 1.2rem;
       color: rgb(227, 222, 222);
-
-      :hover{
-        background-color: $color-boton;
+      border: none;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+      &:hover{
+        background-color: $color-boton-hover;
       }
     }
   }
