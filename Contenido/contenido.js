@@ -1,3 +1,4 @@
+// Mostrar personas por defecto
 const tabla = document.getElementById("tabla");
 
 fetch("https://vinculos-backend-fth6etbkfhfwbqhn.centralus-01.azurewebsites.net/api/Personas/listar")
@@ -29,3 +30,43 @@ fetch("https://vinculos-backend-fth6etbkfhfwbqhn.centralus-01.azurewebsites.net/
     console.error("Error:", error);
     alert("Error de conexión con el servidor: " + error.message);
   });
+
+// mostrar identificaciones sin registro
+const identificaciones_sin_registro = document.getElementById("identificaciones_sin_registro");
+const sin_registro = document.getElementById("sin_registro");
+
+function identificacionesSinRegistro(boton, elemento){
+  boton.addEventListener("click", (event) => {
+    fetch("https://vinculos-backend-fth6etbkfhfwbqhn.centralus-01.azurewebsites.net/api/GestionDeIdentificacion/listar")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Error en la respuesta del servidor");
+      }
+      return response.json();
+      })
+    .then(data => {
+      // limpiar todo menos los títulos
+      elemento.innerHTML = `
+        <p class="titulo">ID</p>
+        <p class="titulo">Nombres</p>
+        <p class="titulo">Apellidos</p>
+        <p class="titulo">Fecha De Nacimiento</p>
+      `;
+      // mostrar las identificaciones en filas
+      data.forEach(persona => {
+        elemento.innerHTML += `
+          <p>${persona.id}</p>
+          <p>${persona.nombres}</p>
+          <p>${persona.apellidos}</p>
+          <p>${persona.fechaNacimiento}</p>
+        `;
+      });
+    })
+    .catch(error => {
+      console.error("Error:", error);
+      alert("Error de conexión con el servidor: " + error.message);
+    });
+  });
+}
+
+identificacionesSinRegistro(identificaciones_sin_registro, sin_registro);
