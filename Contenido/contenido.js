@@ -114,7 +114,7 @@ contactoSinRegistro(contacto_sin_registro, sin_registro);
 // mostrar Profesiones sin registro
 const profesiones_sin_registro = document.getElementById("profesiones_sin_registro");
 
-function contactoSinRegistro(boton, elemento){
+function profesionSinRegistro(boton, elemento){
   boton.addEventListener("click", (event) => {
     fetch("https://vinculos-backend-fth6etbkfhfwbqhn.centralus-01.azurewebsites.net/api/GestionDeContacto/listarProfesionesSinRegistroPersona")
     .then(response => {
@@ -147,4 +147,4 @@ function contactoSinRegistro(boton, elemento){
     });
   });
 }
-contactoSinRegistro(profesiones_sin_registro, sin_registro);
+profesionSinRegistro(profesiones_sin_registro, sin_registro);
