@@ -110,3 +110,4 @@ function contactoSinRegistro(boton, elemento){
   });
 }
 contactoSinRegistro(contacto_sin_registro, sin_registro);
+/**********************************************************************/
