@@ -40,7 +40,7 @@ const identificaciones_sin_registro = document.getElementById("identificaciones_
 
 function identificacionesSinRegistro(boton, elemento){
   boton.addEventListener("click", (event) => {
-    fetch("https://vinculos-backend-fth6etbkfhfwbqhn.centralus-01.azurewebsites.net/api/GestionDeIdentificacion/listar")
+    fetch("https://vinculos-backend-fth6etbkfhfwbqhn.centralus-01.azurewebsites.net/api/GestionDeIdentificacion/listarIdentificacionesSinregistroPersona")
     .then(response => {
       if (!response.ok) {
         throw new Error("Error en la respuesta del servidor");
@@ -78,7 +78,7 @@ const contacto_sin_registro = document.getElementById("contacto_sin_registro");
 
 function contactoSinRegistro(boton, elemento){
   boton.addEventListener("click", (event) => {
-    fetch("https://vinculos-backend-fth6etbkfhfwbqhn.centralus-01.azurewebsites.net/api/GestionDeContacto/listar")
+    fetch("https://vinculos-backend-fth6etbkfhfwbqhn.centralus-01.azurewebsites.net/api/GestionDeContacto/listarContactosSinRegistroPersona")
     .then(response => {
       if (!response.ok) {
         throw new Error("Error en la respuesta del servidor");
@@ -110,4 +110,41 @@ function contactoSinRegistro(boton, elemento){
   });
 }
 contactoSinRegistro(contacto_sin_registro, sin_registro);
-/**********************************************************************/
+
+// mostrar Profesiones sin registro
+const profesiones_sin_registro = document.getElementById("profesiones_sin_registro");
+
+function contactoSinRegistro(boton, elemento){
+  boton.addEventListener("click", (event) => {
+    fetch("https://vinculos-backend-fth6etbkfhfwbqhn.centralus-01.azurewebsites.net/api/GestionDeContacto/listarProfesionesSinRegistroPersona")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Error en la respuesta del servidor");
+      }
+      return response.json();
+      })
+    .then(data => {
+      // Limpiar todo menos los títulos
+      elemento.innerHTML = `
+        <p class="titulo">ID</p>
+        <p class="titulo">Nombre</p>
+        <p class="titulo">Carrera</p>
+        <p class="titulo">Donde Estudio</p>
+      `;
+      // Mostrar las identificaciones en filas
+      data.forEach(persona => {
+        elemento.innerHTML += `
+          <p>${persona.id}</p>
+          <p>${persona.nombre}</p>
+          <p>${persona.carrera}</p>
+          <p>${persona.dondeestudio}</p>
+        `;
+      });
+    })
+    .catch(error => {
+      console.error("Error:", error);
+      alert("Error de conexión con el servidor: " + error.message);
+    });
+  });
+}
+contactoSinRegistro(profesiones_sin_registro, sin_registro);
