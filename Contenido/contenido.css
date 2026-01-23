@@ -1,6 +1,28 @@
-/* para tabla stilo de 4 columnas */
 /* colores para tabla */
 /* colores para botones no registrados*/
+/* para tabla stilo de 4 columnas */
+/* para tabla stilo de 2 columnas */
+.tablaEstilo2Columnas_ {
+  display: grid;
+  grid-template-columns: auto auto;
+  background-color: white;
+}
+.tablaEstilo2Columnas_ .titulo {
+  background-color: #c6d2ef;
+  border-bottom: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.tablaEstilo2Columnas_ p {
+  padding: 1rem 1rem 1rem 1rem;
+  word-break: break-all;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  font-weight: 450;
+}
+.tablaEstilo2Columnas_ p:nth-child(1), .tablaEstilo2Columnas_ p:nth-child(2), .tablaEstilo2Columnas_ p:nth-child(3) {
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
 html {
   box-sizing: border-box;
   background-color: #f2f4f7;
@@ -23,7 +45,7 @@ header h1 {
 }
 
 #contenido {
-  max-width: 80rem;
+  max-width: 100%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -87,4 +109,20 @@ header h1 {
 }
 #tabla p:nth-child(1), #tabla p:nth-child(2), #tabla p:nth-child(3) {
   border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* responsivo en celulares */
+p {
+  overflow-wrap: break-word;
+}
+
+@media only screen and (max-width: 768px) {
+  #tabla {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 480px) {
+  #tabla {
+    grid-template-columns: 1fr;
+  }
 }/*# sourceMappingURL=contenido.css.map */

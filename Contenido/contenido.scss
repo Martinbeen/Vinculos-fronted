@@ -1,3 +1,10 @@
+/* colores para tabla */
+$color-border-tabla: rgba(0,0,0,0.2);
+$color-fondo-tabla-fila: white;
+
+/* colores para botones no registrados*/
+$color-boton: #185ec7;
+$color-boton-hover: #436fb2;
 /* para tabla stilo de 4 columnas */
 @mixin tablaEstilo4Columnas(){
   display: grid;
@@ -45,14 +52,6 @@
 .tablaEstilo2Columnas_{
   @include tablaEstilo2Columnas;
 }
-
-/* colores para tabla */
-$color-border-tabla: rgba(0,0,0,0.2);
-$color-fondo-tabla-fila: white;
-
-/* colores para botones no registrados*/
-$color-boton: #185ec7;
-$color-boton-hover: #436fb2;
 
 html {
   box-sizing: border-box;
@@ -117,16 +116,12 @@ header{
 p {
   overflow-wrap: break-word;
 }
-@media (max-width: 768px) {
-  body{
-    background-color: red;
-  }
+@media only screen and (max-width: 768px) {
   #tabla {
     grid-template-columns: 1fr 1fr; // 2 columnas en tablets
   }
 }
-
-@media (max-width: 480px) {
+@media only screen and (max-width: 480px) {
   #tabla {
     grid-template-columns: 1fr; // 1 columna en móviles
   }
