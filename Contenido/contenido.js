@@ -116,7 +116,7 @@ const profesiones_sin_registro = document.getElementById("profesiones_sin_regist
 
 function profesionSinRegistro(boton, elemento){
   boton.addEventListener("click", (event) => {
-    fetch("https://vinculos-backend-fth6etbkfhfwbqhn.centralus-01.azurewebsites.net/api/GestionDeContacto/listarProfesionesSinRegistroPersona")
+    fetch("https://vinculos-backend-fth6etbkfhfwbqhn.centralus-01.azurewebsites.net/api/GestionDeProfesion/listarProfesionesSinRegistroPersona")
     .then(response => {
       if (!response.ok) {
         throw new Error("Error en la respuesta del servidor");
