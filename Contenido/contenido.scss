@@ -46,23 +46,6 @@
   @include tablaEstilo2Columnas;
 }
 
-/* responsivo en celulares */
-p {
-  overflow-wrap: break-word;
-}
-@media (max-width: 768px) {
-  #tabla {
-    grid-template-columns: 1fr 1fr; // 2 columnas en tablets
-  }
-}
-
-@media (max-width: 480px) {
-  #tabla {
-    grid-template-columns: 1fr; // 1 columna en móviles
-  }
-}
-
-
 /* colores para tabla */
 $color-border-tabla: rgba(0,0,0,0.2);
 $color-fondo-tabla-fila: white;
@@ -126,4 +109,25 @@ header{
 /* stilos para la Tabla */
 #tabla{
   @include tablaEstilo4Columnas;
+}
+
+
+
+/* responsivo en celulares */
+p {
+  overflow-wrap: break-word;
+}
+@media (max-width: 768px) {
+  body{
+    background-color: red;
+  }
+  #tabla {
+    grid-template-columns: 1fr 1fr; // 2 columnas en tablets
+  }
+}
+
+@media (max-width: 480px) {
+  #tabla {
+    grid-template-columns: 1fr; // 1 columna en móviles
+  }
 }
