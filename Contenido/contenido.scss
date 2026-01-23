@@ -25,6 +25,10 @@
 $color-border-tabla: rgba(0,0,0,0.2);
 $color-fondo-tabla-fila: white;
 
+/* colores para botones no registrados*/
+$color-boton: #185ec7;
+$color-boton-hover: #436fb2;
+
 html {
   box-sizing: border-box;
   background-color: #f2f4f7;
@@ -55,11 +59,23 @@ header{
   gap: 1rem;
   padding: 2rem 0 4rem 0;
 
-  h2{
-    padding: 1rem 0 1rem 0;
-    border-bottom: 1px solid $color-border-tabla;
+  section:first-child{
+    h2{
+      padding: 1rem 0 1rem 0;
+      border-bottom: 1px solid $color-border-tabla;
+    }
+    #sin_registro{ @include tablaEstilo4Columnas;}
+    button{
+      padding: 0.5rem;
+      background-color: $color-boton;
+      font-size: 1.2rem;
+      color: rgb(227, 222, 222);
+
+      :hover{
+        background-color: $color-boton;
+      }
+    }
   }
-  #sin_registro{ @include tablaEstilo4Columnas;}
 }
 
 /* stilos para la Tabla */
