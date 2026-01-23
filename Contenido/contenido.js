@@ -86,7 +86,7 @@ function contactoSinRegistro(boton, elemento){
       // limpiar todo menos los títulos
       elemento.innerHTML = `
         <p class="titulo">ID</p>
-        <p class="titulo">Nombres</p>
+        <p class="titulo">cambiado</p>
         <p class="titulo">--</p>
         <p class="titulo">--</p>
       `;
