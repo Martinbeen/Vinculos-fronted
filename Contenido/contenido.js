@@ -137,7 +137,7 @@ function profesionSinRegistro(boton, elemento){
           <p>${persona.id}</p>
           <p>${persona.nombre}</p>
           <p>${persona.carrera}</p>
-          <p>${persona.dondeestudio}</p>
+          <p>${persona.dondeEstudio}</p>
         `;
       });
     })
