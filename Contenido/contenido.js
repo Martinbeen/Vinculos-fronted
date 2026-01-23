@@ -9,7 +9,7 @@ fetch("https://vinculos-backend-fth6etbkfhfwbqhn.centralus-01.azurewebsites.net/
     return response.json();
   })
   .then(data => {
-    // limpiar todo menos los títulos
+    // limpiar todo menos los título
     tabla.innerHTML = `
       <p class="titulo">Nombre</p>
       <p class="titulo">Fecha De Nacimiento</p>
