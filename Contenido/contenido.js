@@ -87,12 +87,14 @@ function contactoSinRegistro(boton, elemento){
       elemento.innerHTML = `
         <p class="titulo">ID</p>
         <p class="titulo">Nombres</p>
+        <br>
       `;
       // mostrar las identificaciones en filas
       data.forEach(persona => {
         elemento.innerHTML += `
           <p>${persona.id}</p>
           <p>${persona.nombre}</p>
+          <br>
         `;
       });
     })

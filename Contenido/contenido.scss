@@ -20,6 +20,31 @@
     border-right: 1px solid $color-border-tabla;
   }
 }
+/* para tabla stilo de 2 columnas */
+@mixin tablaEstilo2Columnas(){
+  display: grid;
+  grid-template-columns: auto auto;
+  background-color: $color-fondo-tabla-fila;
+  
+  .titulo{
+    background-color: #c6d2ef;
+    border-bottom: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  p{
+    padding: 1rem 1rem 1rem 1rem;
+    word-break: break-all;
+    border-bottom: 1px solid $color-border-tabla;
+    font-weight: 450;
+  }
+  p:nth-child(1), p:nth-child(2), p:nth-child(3){
+    border-right: 1px solid $color-border-tabla;
+  }
+}
+.tablaEstilo2Columnas_{
+  @include tablaEstilo2Columnas;
+}
 
 /* colores para tabla */
 $color-border-tabla: rgba(0,0,0,0.2);
