@@ -84,6 +84,7 @@ function contactoSinRegistro(boton, elemento){
       })
     .then(data => {
       // limpiar todo menos los títulos
+      alert("idiota");
       elemento.innerHTML = `
         <p class="titulo">ID</p>
         <p class="titulo">cambiado</p>
