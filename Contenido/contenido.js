@@ -31,9 +31,12 @@ fetch("https://vinculos-backend-fth6etbkfhfwbqhn.centralus-01.azurewebsites.net/
     alert("Error de conexión con el servidor: " + error.message);
   });
 
+
+
+const sin_registro = document.getElementById("sin_registro");
 // mostrar identificaciones sin registro
 const identificaciones_sin_registro = document.getElementById("identificaciones_sin_registro");
-const sin_registro = document.getElementById("sin_registro");
+
 
 function identificacionesSinRegistro(boton, elemento){
   boton.addEventListener("click", (event) => {
@@ -83,14 +86,14 @@ function contactoSinRegistro(boton, elemento){
       return response.json();
       })
     .then(data => {
-      // limpiar todo menos los títulos
+      // Limpiar todo menos los títulos
       elemento.innerHTML = `
         <p class="titulo">ID</p>
         <p class="titulo">Nombre</p>
         <p class="titulo">--</p>
         <p class="titulo">--</p>
       `;
-      // mostrar las identificaciones en filas
+      // Mostrar las identificaciones en filas
       data.forEach(persona => {
         elemento.innerHTML += `
           <p>${persona.id}</p>
